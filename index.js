@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let tabla = document.getElementsByTagName('table')[0];
 let botones = document.getElementsByClassName('buttons')[0];
+
 //boton añadir elemento
 let bottonAgregar = document.createElement('div');
 bottonAgregar.textContent = 'añadir';
@@ -9,8 +10,7 @@ bottonAgregar.style = 'border: 1px solid black';
 bottonAgregar.style.height = '30px';
 bottonAgregar.style.width = '80px';
 bottonAgregar.addEventListener('click', (event) => {
-  let cuerpo = document.createElement('tbody');
-  tabla.appendChild(cuerpo);
+  let cuerpo = document.getElementsByTagName('tbody')[0];
   let nombreAlimento = prompt('introduce el nombre del alimento: ');
   let calorias = prompt('introduce las calorias del alimento: ');
   let nuevaFila = document.createElement('tr');
@@ -41,10 +41,12 @@ bottonVaciar.textContent = 'vaciar';
 bottonVaciar.style = 'border: 1px solid black';
 bottonVaciar.style.height = '30px';
 bottonVaciar.style.width = '80px';
-botones.appendChild(bottonvaciar);
-bottonvaciar.addEventListener('click', (event) => {
+botones.appendChild(bottonVaciar);
+bottonVaciar.addEventListener('click', (event) => {
 let cuerpo = document.getElementsByTagName('tbody')[0];
 cuerpo.remove();
+let cuerpoNuevo = document.createElement('tbody')
+tabla.appendChild(cuerpoNuevo)
 })
 
 });
