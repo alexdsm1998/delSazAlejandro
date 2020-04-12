@@ -1,49 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-let tabla = document.getElementsByTagName('table')[0]
-let botones = document.getElementsByClassName('buttons')[0]
+let tabla = document.getElementsByTagName('table')[0];
+let botones = document.getElementsByClassName('buttons')[0];
 //boton añadir elemento
-let bottonañadir = document.createElement('div')
-bottonañadir.textContent = 'añadir'
-bottonañadir.style = 'border: 1px solid black'
-bottonañadir.style.height = '30px'
-bottonañadir.style.width = '80px'
-bottonañadir.addEventListener('click', (event) => {
-  let cuerpo = document.createElement('tbody')
-  tabla.appendChild(cuerpo)
-  let nombre_alimento = prompt('introduce el nombre del alimento: ')
-  let calorias = prompt('introduce las calorias del alimento: ')
-  let nueva_fila = document.createElement('tr')
-  cuerpo.appendChild(nueva_fila)
-  let celda_nombre = document.createElement('td')
-  celda_nombre.textContent = nombre_alimento;
-  let celda_calorias = document.createElement('td')
-  celda_calorias.textContent = calorias;
-  nueva_fila.appendChild(celda_nombre)
-  nueva_fila.appendChild(celda_calorias)
+let bottonAgregar = document.createElement('div');
+bottonAgregar.textContent = 'añadir';
+bottonAgregar.style = 'border: 1px solid black';
+bottonAgregar.style.height = '30px';
+bottonAgregar.style.width = '80px';
+bottonAgregar.addEventListener('click', (event) => {
+  let cuerpo = document.createElement('tbody');
+  tabla.appendChild(cuerpo);
+  let nombreAlimento = prompt('introduce el nombre del alimento: ');
+  let calorias = prompt('introduce las calorias del alimento: ');
+  let nuevaFila = document.createElement('tr');
+  cuerpo.appendChild(nuevaFila);
+  let celdaNombre = document.createElement('td');
+  celdaNombre.textContent = nombreAlimento;
+  let celdaCalorias = document.createElement('td');
+  celdaCalorias.textContent = calorias;
+  nuevaFila.appendChild(celdaNombre);
+  nuevaFila.appendChild(celdaCalorias);
 });
-  botones.appendChild(bottonañadir)
+  botones.appendChild(bottonAgregar);
 
 //boton calcular calorias
-let bottoncalcular = document.createElement('div')
-bottoncalcular.textContent = 'calcular calorias'
-bottoncalcular.style = 'border: 1px solid black'
-bottoncalcular.style.height = '30px'
-bottoncalcular.style.width = '80px'
-bottoncalcular.addEventListener('click', (event) => {
+let bottonCalcular = document.createElement('div');
+bottonCalcular.textContent = 'calcular calorias';
+bottonCalcular.style = 'border: 1px solid black';
+bottonCalcular.style.height = '30px';
+bottonCalcular.style.width = '80px';
+bottonCalcular.addEventListener('click', (event) => {
 
 })
-botones.appendChild(bottoncalcular)
+botones.appendChild(bottonCalcular);
 
 //boton vaciar
-let bottonvaciar = document.createElement('div')
-bottonvaciar.textContent = 'vaciar'
-bottonvaciar.style = 'border: 1px solid black'
-bottonvaciar.style.height = '30px'
-bottonvaciar.style.width = '80px'
-botones.appendChild(bottonvaciar)
+let bottonVaciar = document.createElement('div');
+bottonVaciar.textContent = 'vaciar';
+bottonVaciar.style = 'border: 1px solid black';
+bottonVaciar.style.height = '30px';
+bottonVaciar.style.width = '80px';
+botones.appendChild(bottonvaciar);
 bottonvaciar.addEventListener('click', (event) => {
-let cuerpo = document.getElementsByTagName('tbody')[0]
+let cuerpo = document.getElementsByTagName('tbody')[0];
 cuerpo.remove();
 })
 
