@@ -28,6 +28,10 @@ bottoncalcular.textContent = 'calcular calorias'
 bottoncalcular.style = 'border: 1px solid black'
 bottoncalcular.style.height = '30px'
 bottoncalcular.style.width = '80px'
+bottoncalcular.addEventListener('click', (event) => {
+
+})
+botones.appendChild(bottoncalcular)
 
 //boton vaciar
 let bottonvaciar = document.createElement('div')
@@ -38,12 +42,6 @@ bottonvaciar.style.width = '80px'
 botones.appendChild(bottonvaciar)
 bottonvaciar.addEventListener('click', (event) => {
 cuerpo.remove();
-//let celda = document.getElementsByTagName('td')
-//for (var i = 0; i < celda.length; i++) {
-  //let j = celda[i]
-  //let y = j+y
-//}
-//y.remove();
 })
 
 });
