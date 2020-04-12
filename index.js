@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-let cuerpo = document.getElementsByTagName('tbody')[0]
+let tabla = document.getElementsByTagName('table')[0]
 let botones = document.getElementsByClassName('buttons')[0]
 //boton añadir elemento
 let bottonañadir = document.createElement('div')
@@ -9,6 +9,8 @@ bottonañadir.style = 'border: 1px solid black'
 bottonañadir.style.height = '30px'
 bottonañadir.style.width = '80px'
 bottonañadir.addEventListener('click', (event) => {
+  let cuerpo = document.createElement('tbody')
+  tabla.appendChild(cuerpo)
   let nombre_alimento = prompt('introduce el nombre del alimento: ')
   let calorias = prompt('introduce las calorias del alimento: ')
   let nueva_fila = document.createElement('tr')
@@ -41,6 +43,7 @@ bottonvaciar.style.height = '30px'
 bottonvaciar.style.width = '80px'
 botones.appendChild(bottonvaciar)
 bottonvaciar.addEventListener('click', (event) => {
+let cuerpo = document.getElementsByTagName('tbody')[0]
 cuerpo.remove();
 })
 
