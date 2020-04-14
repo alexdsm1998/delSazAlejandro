@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let tabla = document.getElementsByTagName('table')[0];
 let botones = document.getElementsByClassName('buttons')[0];
+let resultado = document.getElementsByClassName('result')[0];
+
 
 //boton añadir elemento
 let bottonAgregar = document.createElement('div');
@@ -12,15 +14,14 @@ bottonAgregar.style.width = '80px';
 bottonAgregar.addEventListener('click', (event) => {
   let cuerpo = document.getElementsByTagName('tbody')[0];
   let nombreAlimento = prompt('introduce el nombre del alimento: ');
-  let calorias = prompt('introduce las calorias del alimento: ');
   let nuevaFila = document.createElement('tr');
   cuerpo.appendChild(nuevaFila);
   let celdaNombre = document.createElement('td');
   celdaNombre.textContent = nombreAlimento;
-  let celdaCalorias = document.createElement('td');
-  celdaCalorias.textContent = calorias;
+  let input = document.createElement('input');
+  input.type = 'text';
   nuevaFila.appendChild(celdaNombre);
-  nuevaFila.appendChild(celdaCalorias);
+  nuevaFila.appendChild(input);
 });
   botones.appendChild(bottonAgregar);
 
