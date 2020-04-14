@@ -18,10 +18,12 @@ bottonAgregar.addEventListener('click', (event) => {
   cuerpo.appendChild(nuevaFila);
   let celdaNombre = document.createElement('td');
   celdaNombre.textContent = nombreAlimento;
+  let celdaCalorias = document.createElement('td');
   let input = document.createElement('input');
   input.type = 'text';
+  celdaCalorias.appendChild(input)
   nuevaFila.appendChild(celdaNombre);
-  nuevaFila.appendChild(input);
+  nuevaFila.appendChild(celdaCalorias);
 });
   botones.appendChild(bottonAgregar);
 
