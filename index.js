@@ -34,7 +34,15 @@ bottonCalcular.style = 'border: 1px solid black';
 bottonCalcular.style.height = '30px';
 bottonCalcular.style.width = '80px';
 bottonCalcular.addEventListener('click', (event) => {
-
+parrafoResultado.remove();
+let valores = document.getElementsByTagName('input').value;
+forEach((values, i) => {
+let valor = valores[i];
+let valorFinal = valorFinal + valor;
+});
+let parrafoResultado = document.createElement('p');
+parrafoResultado.textContent = valorFinal;
+resultado.appendChild(parrafoResultado);
 })
 botones.appendChild(bottonCalcular);
 
