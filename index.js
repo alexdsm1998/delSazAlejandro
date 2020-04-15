@@ -34,12 +34,11 @@ bottonCalcular.style = 'border: 1px solid black';
 bottonCalcular.style.height = '30px';
 bottonCalcular.style.width = '80px';
 bottonCalcular.addEventListener('click', (event) => {
-parrafoResultado.remove();
-let valores = document.getElementsByTagName('input').value;
-forEach((values, i) => {
-let valor = valores[i];
-let valorFinal = valorFinal + valor;
-});
+let numeroFilas = document.getElementsByTagName('tr').length;
+for (var i = 1; i < numeroFilas.length; i++) {
+ let valor = document.getElementsByTagName('input')[i].value
+ let valorFinal = valorFinal + valor;
+}
 let parrafoResultado = document.createElement('p');
 parrafoResultado.textContent = valorFinal;
 resultado.appendChild(parrafoResultado);
