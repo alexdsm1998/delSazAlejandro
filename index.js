@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
 
 let tabla = document.getElementsByTagName('table')[0];
 let botones = document.getElementsByClassName('buttons')[0];
@@ -34,12 +34,15 @@ bottonCalcular.style = 'border: 1px solid black';
 bottonCalcular.style.height = '30px';
 bottonCalcular.style.width = '80px';
 bottonCalcular.addEventListener('click', (event) => {
-let numeroInputs = document.getElementsByTagName('input').length;
+  let valorFinal = 0;
+  let valor = 0;
+var numeroInputs = document.getElementsByTagName('input').length;
 for (let i = 0; i < numeroInputs.length; i++) {
- var valor = document.getElementsByTagName('input')[i].value;
- var valorFinal = valor + valorFinal;
+ valor = document.getElementsByTagName('input')[i].value;
+ valorFinal = valor + valorFinal;
 }
-let parrafoResultado = document.createElement('p');
+let parrafoResultado = document.createElement('p')
+parrafoResultado.class = 'parrafoResultado';
 parrafoResultado.textContent = valorFinal;
 resultado.appendChild(parrafoResultado);
 })
@@ -55,8 +58,11 @@ botones.appendChild(bottonVaciar);
 bottonVaciar.addEventListener('click', (event) => {
 let cuerpo = document.getElementsByTagName('tbody')[0];
 cuerpo.remove();
-let cuerpoNuevo = document.createElement('tbody')
-tabla.appendChild(cuerpoNuevo)
+//resultado.remove();
+let cuerpoNuevo = document.createElement('tbody');
+tabla.appendChild(cuerpoNuevo);
+//let nuevoResultado = document.createElement('div');
+//nuevoResultado.className = 'result';
+//document.body.appendChild(nuevoResultado);
 })
-
 });
