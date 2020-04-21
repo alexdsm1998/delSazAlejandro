@@ -27,6 +27,8 @@ bottonAgregar.addEventListener('click', (event) => {
 });
   botones.appendChild(bottonAgregar);
 
+
+//boton calcular calorias
 //boton calcular calorias
 let bottonCalcular = document.createElement('div');
 bottonCalcular.textContent = 'calcular calorias';
@@ -34,16 +36,19 @@ bottonCalcular.style = 'border: 1px solid black';
 bottonCalcular.style.height = '30px';
 bottonCalcular.style.width = '80px';
 bottonCalcular.addEventListener('click', (event) => {
-  let valorFinal = 0;
   let valor = 0;
-var numeroInputs = document.getElementsByTagName('input').length;
-for (let i = 0; i < numeroInputs.length; i++) {
- valor = document.getElementsByTagName('input')[i].value;
- valorFinal = valor + valorFinal;
+  var numeroInputs = [];
+  var arrayValores = [];
+  numeroInputs = document.getElementsByTagName('input').length;
+for (let i = 0; i < numeroInputs; i++) {
+  valor = document.getElementsByTagName('input')[i].value;
+  arrayValores.push(valor)
+  console.log(arrayValores)
 }
+
 let parrafoResultado = document.createElement('p')
 parrafoResultado.class = 'parrafoResultado';
-parrafoResultado.textContent = valorFinal;
+parrafoResultado.textContent = '';
 resultado.appendChild(parrafoResultado);
 })
 botones.appendChild(bottonCalcular);
