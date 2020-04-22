@@ -5,6 +5,7 @@ let botones = document.getElementsByClassName('buttons')[0];
 let resultado = document.getElementsByClassName('result')[0];
 
 
+
 //boton añadir elemento
 let bottonAgregar = document.createElement('div');
 bottonAgregar.textContent = 'añadir';
@@ -14,6 +15,10 @@ bottonAgregar.style.width = '80px';
 bottonAgregar.addEventListener('click', (event) => {
   let cuerpo = document.getElementsByTagName('tbody')[0];
   let nombreAlimento = prompt('introduce el nombre del alimento: ');
+  while (nombreAlimento == '') {
+     alert('no puedes dejar este espacio en blanco')
+     nombreAlimento = prompt('introduce el nombre del alimento: ');
+  }
   let nuevaFila = document.createElement('tr');
   cuerpo.appendChild(nuevaFila);
   let celdaNombre = document.createElement('td');
@@ -28,7 +33,7 @@ bottonAgregar.addEventListener('click', (event) => {
   botones.appendChild(bottonAgregar);
 
 
-//boton calcular calorias
+
 //boton calcular calorias
 let bottonCalcular = document.createElement('div');
 bottonCalcular.textContent = 'calcular calorias';
@@ -42,14 +47,18 @@ bottonCalcular.addEventListener('click', (event) => {
   numeroInputs = document.getElementsByTagName('input').length;
 for (let i = 0; i < numeroInputs; i++) {
   valor = document.getElementsByTagName('input')[i].value;
-  arrayValores.push(valor)
-  console.log(arrayValores)
+	let valorInt = parseInt(valor);
+  arrayValores.push(valorInt)
 }
-
-let parrafoResultado = document.createElement('p')
-parrafoResultado.class = 'parrafoResultado';
-parrafoResultado.textContent = '';
+let total = arrayValores.reduce((a, b) => a + b, 0);
+if (isNaN(total) == true) {
+ alert('debes introducir un valor numérico en el campo calorias')
+}else {
+let parrafoResultado = document.createElement('h1')
+parrafoResultado.style = 'text-align: center';
+parrafoResultado.textContent = total+' calorias';
 resultado.appendChild(parrafoResultado);
+}
 })
 botones.appendChild(bottonCalcular);
 
@@ -63,11 +72,8 @@ botones.appendChild(bottonVaciar);
 bottonVaciar.addEventListener('click', (event) => {
 let cuerpo = document.getElementsByTagName('tbody')[0];
 cuerpo.remove();
-//resultado.remove();
 let cuerpoNuevo = document.createElement('tbody');
 tabla.appendChild(cuerpoNuevo);
-//let nuevoResultado = document.createElement('div');
-//nuevoResultado.className = 'result';
-//document.body.appendChild(nuevoResultado);
+resultado.textContent = '';
 })
 });
