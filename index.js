@@ -7,11 +7,8 @@ let resultado = document.getElementsByClassName('result')[0];
 
 
 //boton añadir elemento
-let bottonAgregar = document.createElement('div');
+let bottonAgregar = document.createElement('button');
 bottonAgregar.textContent = 'añadir';
-bottonAgregar.style = 'border: 1px solid black';
-bottonAgregar.style.height = '30px';
-bottonAgregar.style.width = '80px';
 bottonAgregar.addEventListener('click', (event) => {
   let cuerpo = document.getElementsByTagName('tbody')[0];
   let nombreAlimento = prompt('introduce el nombre del alimento: ');
@@ -35,11 +32,8 @@ bottonAgregar.addEventListener('click', (event) => {
 
 
 //boton calcular calorias
-let bottonCalcular = document.createElement('div');
+let bottonCalcular = document.createElement('button');
 bottonCalcular.textContent = 'calcular calorias';
-bottonCalcular.style = 'border: 1px solid black';
-bottonCalcular.style.height = '30px';
-bottonCalcular.style.width = '80px';
 bottonCalcular.addEventListener('click', (event) => {
   let valor = 0;
   var numeroInputs = [];
@@ -63,11 +57,8 @@ resultado.appendChild(parrafoResultado);
 botones.appendChild(bottonCalcular);
 
 //boton vaciar
-let bottonVaciar = document.createElement('div');
+let bottonVaciar = document.createElement('button');
 bottonVaciar.textContent = 'vaciar';
-bottonVaciar.style = 'border: 1px solid black';
-bottonVaciar.style.height = '30px';
-bottonVaciar.style.width = '80px';
 botones.appendChild(bottonVaciar);
 bottonVaciar.addEventListener('click', (event) => {
 let cuerpo = document.getElementsByTagName('tbody')[0];
