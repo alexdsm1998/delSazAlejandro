@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     botones.appendChild(bottonAgregar);
 
 
-
     //boton calcular calorias
     let bottonCalcular = document.createElement('button');
     bottonCalcular.textContent = 'calcular calorias';
@@ -41,16 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
         numeroInputs = document.getElementsByTagName('input').length;
         for (let i = 0; i < numeroInputs; i++) {
             valor = document.getElementsByTagName('input')[i].value;
-            if (valor[i] == '') {
-                alert('Debe indicar las calorías de todos los alimentos para poder realizar el cálculo');
-            } else {
-                let valorInt = parseInt(valor);
-                arrayValores.push(valorInt)
-            }
+            let valorInt = parseInt(valor);
+            arrayValores.push(valorInt)
         }
         let total = arrayValores.reduce((a, b) => a + b, 0);
         if (isNaN(total) == true) {
-            alert('no puedes dejar campos en blanco')
+            alert('Debe indicar las calorías de todos los alimentos para poder realizar el cálculo')
         } else {
                 let parrafoResultado = document.createElement('h1')
                 parrafoResultado.style = 'text-align: center';
